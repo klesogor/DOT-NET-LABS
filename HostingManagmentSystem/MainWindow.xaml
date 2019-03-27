@@ -3,10 +3,26 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:HostingManagmentSystem"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="338" Width="519">
+    <Grid Margin="0,0,2,6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="43*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Left" Margin="101,38,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Grid.Column="1" Height="54" Width="322" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-359.778"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run FontSize="30" Text="Выберите действие"/></TextBlock>
+        <Button Content="Тикеты" Grid.Column="1" HorizontalAlignment="Left" Margin="60,149,0,0" VerticalAlignment="Top" Width="76" Background ="Beige"  Click="Button_Tickets"/>
+        <Button Content="Пользователи" Grid.Column="1" HorizontalAlignment="Left" Margin="59,174,0,0" VerticalAlignment="Top" Width="90" Background="Bisque" Click="Button_Users"/>
+        <Button Content="Администраторы" Grid.Column="1" HorizontalAlignment="Left" Margin="60,199,0,0" VerticalAlignment="Top" Width="107" Background="Gold"  Click="Button_Admins" RenderTransformOrigin="0.147,-0.2"/>
+        <Button Content="VPS" Grid.Column="1" HorizontalAlignment="Left" Margin="59,124,0,0" VerticalAlignment="Top" Width="55" Background="White" Click="Button_VPS" RenderTransformOrigin="0.45,0.725"/>
     </Grid>
+
 </Window>

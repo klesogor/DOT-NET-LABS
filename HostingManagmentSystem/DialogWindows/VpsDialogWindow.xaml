@@ -1,0 +1,26 @@
+﻿<Window x:Class="HostingManagmentSystem.DialogWindows.VpsDialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Создание/редактирование администратора" Height="212.915" Width="441.085">
+    <Grid Margin="0,0,-8,-8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="textOs" HorizontalAlignment="Left" Height="23" Margin="93,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.5,-0.391" />
+        <Label Content="ОС" HorizontalAlignment="Left" Margin="14,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.127,-0.223" Width="57"/>
+        <Label Content="ОЗУ" HorizontalAlignment="Left" Margin="14,72,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.281,-0.308"/>
+        <TextBox x:Name="textRam" HorizontalAlignment="Left" Height="23" Margin="93,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
+        <TextBox x:Name="textCpu" HorizontalAlignment="Left" Height="23" Margin="93,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
+        <Label Content="ЦП" HorizontalAlignment="Left" Margin="16,101,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.581,-0.115"/>
+        <Button Content="Отмена" HorizontalAlignment="Left" Margin="344,144,0,0" VerticalAlignment="Top" Width="75" Click="Button_Cancel_Click"/>
+        <Label Content="Администратор" HorizontalAlignment="Left" Margin="214,38,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,0.154"/>
+        <Label Content="Владелец" HorizontalAlignment="Left" Margin="214,86,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,0.154"/>
+        <ComboBox x:Name="cbAdmin" HorizontalAlignment="Left" Margin="214,64,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cbOwner" HorizontalAlignment="Left" Margin="214,112,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="344,112,0,0" VerticalAlignment="Top" Width="75" Click="Button_Add_Click" RenderTransformOrigin="0.533,-0.55"/>
+    </Grid>
+</Window>

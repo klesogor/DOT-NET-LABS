@@ -1,0 +1,30 @@
+﻿<Window x:Class="HostingManagmentSystem.AdditionalWindows.TicketWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Тикеты" Height="336" Width="548">
+    <Grid Margin="0,0,-40,1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="514*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="422,47,0,0" VerticalAlignment="Top" Width="76" Click="Button_Add_Click" Height="20" Grid.Column="1"/>
+        <Button Content="Удалить" HorizontalAlignment="Left" Margin="422,98,0,0" VerticalAlignment="Top" Width="76" Click="Button_Remove_Click" Height="20" Grid.Column="1"/>
+        <Button Content="Редактировать" HorizontalAlignment="Left" Margin="417,140,0,0" VerticalAlignment="Top" Width="90" Click="Button_Edit_Click" Height="20" Grid.Column="1" RenderTransformOrigin="1.796,0.55"/>
+        <ListView x:Name="listTicket" HorizontalAlignment="Left" Height="250" Margin="0,36,0,0" VerticalAlignment="Top" Width="412" Grid.Column="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Description}" Width="100" Header="Описание"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Admin.Name, FallbackValue='Не назначен'}" Width="100" Header="Администратор"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding User.Name, FallbackValue='Отсутствует'}" Width="100" Header="Пользователь"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding VPS.QualifiedName, FallbackValue='Не назначен'}" Width="100" Header="ВПС"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Назад" Grid.Column="1" HorizontalAlignment="Left" Margin="462,273,0,0" VerticalAlignment="Top" Width="50" Height="21" Click="Button_Cancel_Click" RenderTransformOrigin="1.667,0.905"/>
+        <Label Content="Тикеты" Grid.Column="1" HorizontalAlignment="Left" Margin="123,10,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

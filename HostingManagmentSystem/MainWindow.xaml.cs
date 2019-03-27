@@ -1,28 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HostingManagmentSystem.AdditionalWindows;
+using HostingManagmentSystem.Domain.Infrastructure;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
 namespace HostingManagmentSystem
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+            Initializer.Init();
+        }
+
+        private void Button_Admins(object sender, RoutedEventArgs e)
+        {
+            var window = new AdminWindow();
+            Close();
+            window.Show();
+        }
+
+        private void Button_Users(object sender, RoutedEventArgs e)
+        {
+            var window = new UserWindow();
+            Close();
+            window.Show();
+        }
+
+        private void Button_VPS(object sender, RoutedEventArgs e)
+        {
+            var window = new VpsWindow();
+            Close();
+            window.Show();
+        }
+
+        private void Button_Tickets(object sender, RoutedEventArgs e)
+        {
+            var window = new TicketWindow();
+            Close();
+            window.Show();
         }
     }
 }

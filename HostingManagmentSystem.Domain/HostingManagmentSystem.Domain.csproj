@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -63,8 +64,16 @@
     <Compile Include="Repositories\Contracts\Repositories\ITicketRepository.cs" />
     <Compile Include="Repositories\Contracts\Repositories\IUserRepository.cs" />
     <Compile Include="Repositories\Contracts\Repositories\IVpsRepository.cs" />
+    <Compile Include="Repositories\Database\AbstractRepository.cs" />
+    <Compile Include="Repositories\Database\AdminRepository.cs" />
+    <Compile Include="Repositories\Database\RoleAdminRepository.cs" />
+    <Compile Include="Repositories\Database\RoleRepository.cs" />
+    <Compile Include="Repositories\Database\TicketRepository.cs" />
+    <Compile Include="Repositories\Database\UserRepository.cs" />
+    <Compile Include="Repositories\Database\VpsRepository.cs" />
     <Compile Include="Repositories\FileBased\AbstractRepository.cs" />
     <Compile Include="Repositories\FileBased\AdminRepository.cs" />
+    <Compile Include="Repositories\FileBased\Drivers\JsonDriver.cs" />
     <Compile Include="Repositories\FileBased\Drivers\XmlDriver.cs" />
     <Compile Include="Repositories\FileBased\RoleAdminRepository.cs" />
     <Compile Include="Repositories\FileBased\RoleRepository.cs" />

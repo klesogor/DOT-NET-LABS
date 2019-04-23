@@ -8,7 +8,7 @@ namespace HostingManagmentSystem
         public MainWindow()
         {
             InitializeComponent();
-            Initializer.Init();
+            Initializer.Init(false);
         }
 
         private void Button_Admins(object sender, RoutedEventArgs e)

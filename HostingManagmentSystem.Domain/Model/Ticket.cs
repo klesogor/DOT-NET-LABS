@@ -1,22 +1,31 @@
 ﻿using HostingManagmentSystem.Domain.Exception;
 using HostingManagmentSystem.Domain.Repositories.Contracts.Repositories;
 using System;
+using System.Data.Linq.Mapping;
 using System.Runtime.Serialization;
 
 namespace HostingManagmentSystem.Domain.Model
 {
     [DataContract]
+    [Table]
     public sealed class Ticket : Entity
     {
+        [Column(IsPrimaryKey = true, IsDbGenerated = false)]
+        public override Guid Id { get => id; set => id = value; }
         [DataMember]
+        [Column]
         public string Description { get; set; }
         [DataMember]
+        [Column]
         public DateTime Date { get; set; }
         [DataMember]
+        [Column]
         public Guid? UserId { get; set; }
         [DataMember]
+        [Column]
         public Guid? VpsId { get; set; }
         [DataMember]
+        [Column]
         public Guid? AdminId { get; set; }
 
         public User User

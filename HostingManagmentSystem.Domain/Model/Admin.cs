@@ -3,6 +3,7 @@ using HostingManagmentSystem.Domain.Infrastructure;
 using HostingManagmentSystem.Domain.Repositories.Contracts.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Data.Linq.Mapping;
 using System.Net;
 using System.Runtime.Serialization;
 using System.Text;
@@ -10,11 +11,13 @@ using System.Text;
 namespace HostingManagmentSystem.Domain.Model
 {
     [DataContract]
+    [Table]
     public sealed class Admin: Entity
     {
         private string _ip;
 
         [DataMember]
+        [Column]
         public string Name { get; set; }
         public IEnumerable<VPS> VPS
         {
@@ -25,8 +28,10 @@ namespace HostingManagmentSystem.Domain.Model
             get => _context.Get<RoleAdmin, IRoleAdminRepository>().ByAdmin(this); 
          }
         [DataMember]
+        [Column]
         public string Description { get; set; }
         [DataMember]
+        [Column]
         public string Ip {
             get => _ip;
             set {
@@ -40,6 +45,8 @@ namespace HostingManagmentSystem.Domain.Model
                 }
             }
         }
+        [Column(IsPrimaryKey = true, IsDbGenerated = false)]
+        public override Guid Id { get => id; set => id = value; }
 
         public Admin(string ip, string name, string description)
         {

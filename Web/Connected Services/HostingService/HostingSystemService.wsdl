@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="HostingSystemService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/api?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8080/api?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8080/api?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/HostingManagmentSystem.Domain.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IHostingSystemService_CreateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_CreateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_GetUserById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserById" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_GetUserById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_CreateAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_CreateAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_UpdateAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_UpdateAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_GetAdmins_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdmins" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_GetAdmins_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdminsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_GetAdminById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdminById" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_GetAdminById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdminByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_CreateVps_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateVps" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_CreateVps_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateVpsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_UpdateVps_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVps" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_UpdateVps_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVpsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_GetVps_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVps" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_GetVps_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVpsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_GetVpsById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVpsById" />
+  </wsdl:message>
+  <wsdl:message name="IHostingSystemService_GetVpsById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVpsByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IHostingSystemService">
+    <wsdl:operation name="CreateUser">
+      <wsdl:input wsam:Action="http://tempuri.org/IHostingSystemService/CreateUser" message="tns:IHostingSystemService_CreateUser_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IHostingSystemService/CreateUserResponse" message="tns:IHostingSystemService_CreateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsam:Action="http://tempuri.org/IHostingSystemService/UpdateUser" message="tns:IHostingSystemService_UpdateUser_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IHostingSystemService/UpdateUserResponse" message="tns:IHostingSystemService_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsam:Action="http://tempuri.org/IHostingSystemService/GetUsers" message="tns:IHostingSystemService_GetUsers_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IHostingSystemService/GetUsersResponse" message="tns:IHostingSystemService_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserById">
+      <wsdl:input wsam:Action="http://tempuri.org/IHostingSystemService/GetUserById" message="tns:IHostingSystemService_GetUserById_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IHostingSystemService/GetUserByIdResponse" message="tns:IHostingSystemService_GetUserById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAdmin">
+      <wsdl:input wsam:Action="http://tempuri.org/IHostingSystemService/CreateAdmin" message="tns:IHostingSystemService_CreateAdmin_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IHostingSystemService/CreateAdminResponse" message="tns:IHostingSystemService_CreateAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAdmin">
+      <wsdl:input wsam:Action="http://tempuri.org/IHostingSystemService/UpdateAdmin" message="tns:IHostingSystemService_UpdateAdmin_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IHostingSystemService/UpdateAdminResponse" message="tns:IHostingSystemService_UpdateAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdmins">
+      <wsdl:input wsam:Action="http://tempuri.org/IHostingSystemService/GetAdmins" message="tns:IHostingSystemService_GetAdmins_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IHostingSystemService/GetAdminsResponse" message="tns:IHostingSystemService_GetAdmins_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminById">
+      <wsdl:input wsam:Action="http://tempuri.org/IHostingSystemService/GetAdminById" message="tns:IHostingSystemService_GetAdminById_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IHostingSystemService/GetAdminByIdResponse" message="tns:IHostingSystemService_GetAdminById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateVps">
+      <wsdl:input wsam:Action="http://tempuri.org/IHostingSystemService/CreateVps" message="tns:IHostingSystemService_CreateVps_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IHostingSystemService/CreateVpsResponse" message="tns:IHostingSystemService_CreateVps_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVps">
+      <wsdl:input wsam:Action="http://tempuri.org/IHostingSystemService/UpdateVps" message="tns:IHostingSystemService_UpdateVps_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IHostingSystemService/UpdateVpsResponse" message="tns:IHostingSystemService_UpdateVps_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVps">
+      <wsdl:input wsam:Action="http://tempuri.org/IHostingSystemService/GetVps" message="tns:IHostingSystemService_GetVps_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IHostingSystemService/GetVpsResponse" message="tns:IHostingSystemService_GetVps_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVpsById">
+      <wsdl:input wsam:Action="http://tempuri.org/IHostingSystemService/GetVpsById" message="tns:IHostingSystemService_GetVpsById_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IHostingSystemService/GetVpsByIdResponse" message="tns:IHostingSystemService_GetVpsById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IHostingSystemService" type="tns:IHostingSystemService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateUser">
+      <soap:operation soapAction="http://tempuri.org/IHostingSystemService/CreateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IHostingSystemService/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/IHostingSystemService/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserById">
+      <soap:operation soapAction="http://tempuri.org/IHostingSystemService/GetUserById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAdmin">
+      <soap:operation soapAction="http://tempuri.org/IHostingSystemService/CreateAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAdmin">
+      <soap:operation soapAction="http://tempuri.org/IHostingSystemService/UpdateAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdmins">
+      <soap:operation soapAction="http://tempuri.org/IHostingSystemService/GetAdmins" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdminById">
+      <soap:operation soapAction="http://tempuri.org/IHostingSystemService/GetAdminById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateVps">
+      <soap:operation soapAction="http://tempuri.org/IHostingSystemService/CreateVps" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVps">
+      <soap:operation soapAction="http://tempuri.org/IHostingSystemService/UpdateVps" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVps">
+      <soap:operation soapAction="http://tempuri.org/IHostingSystemService/GetVps" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVpsById">
+      <soap:operation soapAction="http://tempuri.org/IHostingSystemService/GetVpsById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HostingSystemService">
+    <wsdl:port name="BasicHttpBinding_IHostingSystemService" binding="tns:BasicHttpBinding_IHostingSystemService">
+      <soap:address location="http://localhost:8080/api" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
